@@ -30,13 +30,13 @@ local Library = {
 
 	HudRegistry = {};
 
-	FontColor = Color3.fromRGB(25, 27, 66);
-    FontColor2 = Color3.fromRGB(255, 105, 180);
-    MainColor = Color3.fromRGB(122, 60, 60);
-    MainColor2 = Color3.fromRGB(56, 17, 17);
-    BackgroundColor = Color3.fromRGB(153, 44, 62);
-    AccentColor = Color3.fromRGB(50, 59, 42);
-    OutlineColor = Color3.fromRGB(255, 255, 255);
+	FontColor = Color3.fromRGB(191, 191, 191);
+    FontColor2 = Color3.fromRGB(198, 198, 198);
+    MainColor = Color3.fromRGB(15, 15, 15);
+    MainColor2 = Color3.fromRGB(23, 23, 23);
+    BackgroundColor = Color3.fromRGB(107, 99, 75);
+    AccentColor = Color3.fromRGB(50, 150, 255);
+    OutlineColor = Color3.fromRGB(11, 11, 11);
     RiskColor = Color3.fromRGB(255, 50, 50),
 
 	Black = Color3.new(0, 0, 0);
