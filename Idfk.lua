@@ -46,7 +46,7 @@ local Library = {
 	DependencyBoxes = {};
 
 	Signals = {};
-	ScreenGui = ScreenGui;
+	 = ;
 };
 
 local RainbowStep = 0
@@ -192,7 +192,7 @@ function Library:MakeDraggable(Instance, Cutoff)
 			while InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
 				Instance.Position = UDim2.new(
 					0,
-					Mouse.X - ObjPos.X + (Instance.Size.X.Offset * Instance.AnchorPoint.X),
+					Mouse.X - ObjPos.X + (Instance..X.Offset * Instance.AnchorPoint.X),
 					0,
 					Mouse.Y - ObjPos.Y + (Instance.Size.Y.Offset * Instance.AnchorPoint.Y)
 				);
@@ -211,7 +211,7 @@ function Library:AddToolTip(InfoStr, HoverInstance)
 
 		Size = UDim2.fromOffset(X + 5, Y + 4),
 		ZIndex = 100,
-		Parent = Library.ScreenGui,
+		Parent = Library.,
 
 		Visible = false,
 	})
@@ -405,14 +405,14 @@ function Library:Unload()
 		Library.OnUnload()
 	end
 
-	ScreenGui:Destroy()
+	:Destroy()
 end
 
 function Library:OnUnload(Callback)
 	Library.OnUnload = Callback
 end
 
-Library:GiveSignal(ScreenGui.DescendantRemoving:Connect(function(Instance)
+Library:GiveSignal(.DescendantRemoving:Connect(function(Instance)
 	if Library.RegistryMap[Instance] then
 		Library:RemoveFromRegistry(Instance);
 	end;
@@ -787,7 +787,7 @@ do
 		local PickOuter = Library:Create('Frame', {
 			BackgroundColor3 = Color3.new(0, 0, 0);
 			BorderColor3 = Color3.new(0, 0, 0);
-			Size = UDim2.new(0, 28, 0, 15);
+			Size = UDim2.new(0, 30, 0, 16);
 			ZIndex = 6;
 			Parent = ToggleLabel;
 		});
@@ -818,7 +818,7 @@ do
 		local ModeSelectOuter = Library:Create('Frame', {
 			BorderColor3 = Color3.new(0, 0, 0);
 			Position = UDim2.fromOffset(ToggleLabel.AbsolutePosition.X + ToggleLabel.AbsoluteSize.X + 4, ToggleLabel.AbsolutePosition.Y + 1);
-			Size = UDim2.new(0, 60, 0, 45 + 2);
+			Size = UDim2.new(0, 65, 0, 50 + 3);
 			Visible = false;
 			ZIndex = 14;
 			Parent = ScreenGui;
@@ -832,7 +832,7 @@ do
 			BackgroundColor3 = Library.BackgroundColor;
 			BorderColor3 = Library.OutlineColor;
 			BorderMode = Enum.BorderMode.Inset;
-			Size = UDim2.new(1, 0, 1, 0);
+			Size = UDim2.new(2, 0, 2, 0);
 			ZIndex = 15;
 			Parent = ModeSelectOuter;
 		});
@@ -850,7 +850,7 @@ do
 
 		local ContainerLabel = Library:CreateLabel({
 			TextXAlignment = Enum.TextXAlignment.Left;
-			Size = UDim2.new(1, 0, 0, 18);
+			Size = UDim2.new(2, 0, 0, 19);
 			TextSize = 13;
 			Visible = false;
 			ZIndex = 110;
@@ -865,7 +865,7 @@ do
 
 			local Label = Library:CreateLabel({
 				Active = false;
-				Size = UDim2.new(1, 0, 0, 15);
+				Size = UDim2.new(2, 0, 0, 16);
 				TextSize = 13;
 				Text = Mode;
 				ZIndex = 16;
@@ -2461,7 +2461,7 @@ do
     local WatermarkOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
         Position = UDim2.new(0, 100, 0, -25);
-        Size = UDim2.new(0, 213, 0, 20);
+        Size = UDim2.new(0, 250, 0, 40);
         ZIndex = 200;
         Visible = false;
         Parent = ScreenGui;
@@ -2471,7 +2471,7 @@ do
         BackgroundColor3 = Library.MainColor;
         BorderColor3 = Library.AccentColor;
         BorderMode = Enum.BorderMode.Inset;
-        Size = UDim2.new(1, 0, 1, 0);
+        Size = UDim2.new(4, 0, 4, 0);
         ZIndex = 201;
         Parent = WatermarkOuter;
     });
@@ -2481,10 +2481,10 @@ do
     });
 
     local InnerFrame = Library:Create('Frame', {
-        BackgroundColor3 = Color3.new(1, 1, 1);
+        BackgroundColor3 = Color3.new(2, 2, 2);
         BorderSizePixel = 0;
         Position = UDim2.new(0, 1, 0, 1);
-        Size = UDim2.new(1, -2, 1, -2);
+        Size = UDim2.new(3, -3, 2, -3);
         ZIndex = 202;
         Parent = WatermarkInner;
     });
@@ -2535,7 +2535,7 @@ do
 		BackgroundColor3 = Library.MainColor;
 		BorderColor3 = Library.OutlineColor;
 		BorderMode = Enum.BorderMode.Inset;
-		Size = UDim2.new(1, 0, 1, 0);
+		Size = UDim2.new(2, 0, 2, 0);
 		ZIndex = 101;
 		Parent = KeybindOuter;
 	});
