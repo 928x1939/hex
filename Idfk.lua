@@ -87,7 +87,7 @@ end
 
 -- Auto Wall Funktion
 local function autoWall(target)
-    if not autoWallEnabled or not target.Character then return end
+    if not autoWallEnabled or not target.Character then return false end
 
     -- Überprüfe ob der Feind hinter einer Wand ist
     local headPosition = target.Character.Head.Position
@@ -95,7 +95,9 @@ local function autoWall(target)
     local direction = (headPosition - startPos).unit
     local raycastResult = workspace:Raycast(startPos, direction * 500)
 
+    -- Sicherstellen, dass die Raycast-Prüfung korrekt funktioniert
     if raycastResult and raycastResult.Instance then
+        -- Wenn es eine Wand ist, die das Ziel blockiert
         return raycastResult.Instance.Name == "Wall" or raycastResult.Instance.Name == "Part"
     end
     return false
@@ -162,3 +164,4 @@ RunService.RenderStepped:Connect(function()
         end
     end
 end)
+
